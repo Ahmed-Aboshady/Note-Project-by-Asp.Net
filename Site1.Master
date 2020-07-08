@@ -1,0 +1,132 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Note_Project.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+      <title>Another page</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <header>
+        <h1 id="head">COMIC ZONE</h1>
+    </header>
+
+    <div class="wrapper">
+        <div id nav-bar>
+            <a href="#" id="logo"></a>
+            <nav>
+                <a href="#" id="menu-icon"></a>
+                <ul>
+                    <li><a href="#About">About us </a></li>
+                    <li><a href="#Contact">Contact<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                        </a></li>
+                    <li><a href="#Product">Products</a></li>
+                    <li><a href="#social">Social media</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="content">
+            <a href="#Contact">
+            <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DataSourceID="SiteMapDataSource1" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#990000" Orientation="Horizontal" StaticDisplayLevels="3" StaticSubMenuIndent="10px">
+                <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <DynamicMenuStyle BackColor="#FFFBD6" />
+                <DynamicSelectedStyle BackColor="#FFCC66" />
+                <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticSelectedStyle BackColor="#FFCC66" />
+            </asp:Menu>
+            </a>
+            <section class="info">
+               <div class="bodytext" style="padding:12px;" align="justify">
+					    <asp:ContentPlaceHolder ID="maincontent" runat="server">
+                        </asp:ContentPlaceHolder>
+				</div>
+                <h1 align="center"> About us</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
+                    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><img src="https://image.shutterstock.com/z/stock-vector-vector-illustration-for-world-map-with-locations-and-activities-spots-pins-and-cities-signs-for-746907148.jpg"
+                    height="30%" width="50%" id="loc">
+                <figcaption>Locations of the current stores around the globe</figcaption>
+            </section>
+            <section class="contacts">
+                <a name="Contact"></a>
+                <h1 id="redback" align="center">Contact</h1>
+                <p>If you want to order or pre-order any of the merchandise you can contact us on any of our <a href="#social" class="link">Social media</a> pages or leave a submission here. We promise to answer you in a short period of time.</p>
+                <p>If you want to leave a message</p>
+                <button id="show" align="center">CLICK HERE</button>
+                <div class="inputs">
+                    First name: <input type="text" name="FirstName" id="first"><br> Last name: <input type="text" id="last" name="LastName"><br>
+                    <textarea rows="10" cols="40">
+        Write a message...
+
+        </textarea>
+
+                    <div class="sub-btn">
+                        <input type="submit" value="Submit" id="sub">
+                    </div>
+                </div>
+            </section>
+            <section style="background-color: orange;">
+                <a name="Product"></a>
+                <h1 align="center">Products</h1>
+                <p>We sell various genres of Comic books, from Marvel and DC comics to European Bonelli and Japanese Manga comics. We have lots to offer so you are welcome to browse.</p>
+                <input type="text" id="search-bar" name="search" value="Search for Comics and Merchandise" onfocus="if (this.value=='Search for Comics and Merchandise') this.value='';" />
+                <div class="comic-b">
+                    <div class="wolv"><img src="https://www.wired.com/images_blogs/underwire/2009/12/1982-wolverine-1-4.jpg" width="200" height="270">
+                        <p>Wolverine</p>
+                        <p>$1.50</p><button id="buy">Buy</button></div>
+                    <div class="bat"><img src="https://i.pinimg.com/736x/3b/70/34/3b7034685ae72f4e90e76004f1189689--batman-comic-books-batman-comics.jpg" width="200" height="270">
+                        <p>Batman No.9</p>
+                        <p>$6.20</p><button id="buy">Buy</button></div>
+                    <div class="sup"><img src="http://www.mrgraymedia.co.uk/gcsemedia/images/comics/superman.jpg" width="200" height="270">
+                        <p>Superman</p>
+                        <p>$2.20</p><button id="buy">Buy</button></div>
+                </div>
+                <div class="merch-sell">
+                    <div class="greenl"><img src="https://www.truffleshuffle.co.uk/store/images_high_res/TruffleShuffle_com_Mens_Green_Vintage_Distressed_DC_Comics_Green_Lantern_T_Shirt_11_99_hi_res.jpg" width="200" height="250">
+                        <p>Green Lantern Shirt</p>
+                        <p>$5.00</p>
+                        <select name="sizes">
+         <option value="xl">XL</option>
+         <option value="xxl">XXL</option>
+         <option value="xxxl">3XL</option>
+           <option value="xxxxl">4XL</option>
+           </select>
+                        <button id="buy">Buy</button>
+                    </div>
+                    <div class="Dnote"><img src="http://g01.a.alicdn.com/kf/HTB1YyRtIpXXXXa5XFXXq6xXFXXXt/Novelty-death-note-notebook-Vintage-journal-diary-book-Stationery-office-material-school-supplies.jpg" width="200" height="250">
+                        <p>Death Note</p>
+                        <p>$3.40</p><button id="buy">Buy</button></div>
+
+                    <div class="sup-two"><img src=" https://i.pinimg.com/736x/bf/b7/1f/bfb71f08590133ad728bf00dcaeb25ed--superman-poster-the-superhero.jpg" width="200" height="250">
+                        <p>Superman Poster</p>
+                        <p>$2.00</p><button id="buy">Buy</button></div>
+                </div>
+            </section>
+            <section class="footer">
+                <footer id="one">
+                    <a name="social"></a>
+                    <p>You can contact us at</p>
+                    <a href=""><img src="https://cdn3.iconfinder.com/data/icons/free-social-icons/67/facebook_circle_color-256.png" height="15%" width="15%"></a>
+                    <a href=""><img src="https://cdn1.iconfinder.com/data/icons/iconza-circle-social/64/697029-twitter-256.png" height="15%" width="15%"></a>
+                    <a href=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/599px-Instagram_icon.png" height="15%" width="15%"></a>
+                </footer>
+                <footer id="two"><b>&copy;2017 page created by </br><a href="#" id="link">Billay</a></b></footer>
+            </section>
+
+
+        </div>
+
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+        <script src="control.js"></script>
+
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+            </div>
+    </form>
+</body>
+</html>
